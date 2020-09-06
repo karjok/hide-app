@@ -7,6 +7,7 @@ def menu(menu):
 		b = sp.check_output("pm list packages", shell=True).decode("utf-8").splitlines()
 		packages = [i.split(":")[1] for i in a]
 		packages_b= [i.split(":")[1] for i in b]
+		packages_b.sort()
 		hidden_packages = [i for i in packages if i not in packages_b]
 		if menu == 1:
 			for i in range(len(packages_b)):
@@ -47,11 +48,11 @@ def home():
 	s = input("Select menu: ")
 	while int(s) not in [i for i in range(3)]:
 		s = input("Select menu: ")
-	menu(int(s))
-	#try:
-	#		menu(int(s))
-	#except:
-	#		print("Contact: \033[92mhttps://t.me/om_karjok\033[0m for asking a question")
+	#menu(int(s))
+	try:
+		menu(int(s))
+	except:
+		print("Contact: \033[92mhttps://t.me/om_karjok\033[0m for asking a question")
 			
 if __name__=='__main__':
 	os.system("clear")
