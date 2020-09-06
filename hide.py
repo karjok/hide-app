@@ -3,7 +3,7 @@ import os,subprocess as sp
 
 def menu(menu):
 	if menu != 0:
-		a = sp.check_output("pm list packages", shell=True).decode("utf-8").splitlines()
+		a = sp.check_output("pm list packages -u", shell=True).decode("utf-8").splitlines()
 		packages = [i.split(":")[1] for i in a]
 		for i in range(len(packages)):
 			print('\033[92m',i+1,'\033[0m.',packages[i])
