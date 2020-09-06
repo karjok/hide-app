@@ -13,8 +13,8 @@ def menu(menu):
 			for i in range(len(packages_b)):
 				print('\033[92m',i+1,'\033[0m.',packages_b[i])
 			s = input("Select package to hide: ")
-			input(f"\033[93mPress enter to hide {packages[int(s)-1]}\033[0m ")
-			os.system(f"pm hide {packages[int(s)-1]}")
+			input(f"\033[93mPress enter to hide {packages_b[int(s)-1]}\033[0m ")
+			os.system(f"pm hide {packages_b[int(s)-1]}")
 			print("Done")
 		else:
 			if len(hidden_packages) != 0:
